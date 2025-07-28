@@ -1,0 +1,239 @@
+.App {
+  min-height: 100vh;
+  background-color: #fdf7f0;
+}
+
+/* Coffee-themed scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3cb8f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5d2f0c;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #d2691e;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes coffee-steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+.coffee-steam {
+  animation: coffee-steam 2s infinite;
+}
+
+/* Custom coffee gradient */
+.coffee-gradient {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #F3CB8F 100%);
+}
+
+/* Card hover effects */
+.coffee-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+}
+
+/* Button styles */
+.btn-coffee {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-coffee:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.btn-coffee:active {
+  transform: translateY(0);
+}
+
+/* PWA Install Button */
+.pwa-install-btn {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pwa-install-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Admin Panel Styles */
+.admin-sidebar {
+  background: linear-gradient(180deg, #8B4513 0%, #5d2f0c 100%);
+  color: white;
+}
+
+.admin-sidebar a {
+  transition: all 0.2s ease;
+}
+
+.admin-sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.admin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+  transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Form Styles */
+.form-input {
+  border: 2px solid #f3cb8f;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #d2691e;
+  box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+}
+
+/* Cart Badge */
+.cart-badge {
+  background: #d2691e;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .btn-coffee {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .pwa-install-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Error boundary styles */
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Notification styles */
+.notification-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.notification-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.notification-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
